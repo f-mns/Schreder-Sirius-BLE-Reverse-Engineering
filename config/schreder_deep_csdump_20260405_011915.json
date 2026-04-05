@@ -1,0 +1,45 @@
+[
+  {
+    "test": "csdump",
+    "blocks": [
+      {
+        "offset": 0,
+        "data": "54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00 00 00 00 00",
+        "length": 20
+      },
+      {
+        "offset": 10,
+        "data": "00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00 06 00 FF F7",
+        "length": 20
+      },
+      {
+        "offset": 20,
+        "data": "E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00 09 00 0A 00",
+        "length": 20
+      },
+      {
+        "offset": 30,
+        "data": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+        "length": 20
+      },
+      {
+        "offset": 40,
+        "data": "00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80 44 47 6D 09",
+        "length": 20
+      },
+      {
+        "offset": 50,
+        "data": "35 0A 34 08 00 41 40 00 00 10 01 00 D0 07 10 27 00 00 38 FF",
+        "length": 20
+      },
+      {
+        "offset": 60,
+        "data": "E2 04 06 FF FD 0A 05 00 00 00 00 00 00 00 00 00 00 00 00 00",
+        "length": 20
+      }
+    ],
+    "ota_version": "06",
+    "current_app": "01",
+    "data_transfer_initial": "(leer)"
+  }
+]

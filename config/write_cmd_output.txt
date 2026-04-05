@@ -1,0 +1,75 @@
+root@pi-unvr:/home/pi# python3 config.py
+  🕐 Fade-Zeit: 8000ms → 40 1F
+
+============================================================
+  Schréder CS-Config Writer
+  Fade-In: 2s → 8s
+============================================================
+
+  📋 Config (140 Bytes):
+     0000: 54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00  |T.(68M.k .......|
+     0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+     0020: 28 00 00 00 06 00 FF F7 E5 3F FF FF FF 3F 30 75  |(........?...?0u|
+     0030: 98 3A 00 00 9D 00 0F 00 09 00 0A 00 00 00 00 00  |.:..............|
+     0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+     0050: 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80  |................|
+     0060: 44 47 6D 09 35 0A 34 08 00 41 40 00 00 10 01 00  |DGm.5.4..A@.....|
+     0070: 40 1F 10 27 00 00 38 FF E2 04 06 FF FD 0A 05 00  |@..'..8.........|
+     0080: 00 00 00 00 00 00 00 00 00 00 00 00              |............|
+
+  🔗 Verbinde mit XX:XX:XX:XX:XX:XX...
+[bluetoothctl]> remove 76:8F
+  ✅ Verbunden!
+
+  ✅ Notify auf 0x1014 aktiv
+
+  📤 Sende Config in 20-Byte Blöcken über 0x1018...
+
+  📦 offset=  0 (0x0000) | 54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00 00 00 00 00
+     Write 0x1018: 00 00 14 00
+  📡 [CS-DATA] 54 00 28 36 38 4D 8F 76 20 00 00 00 00 00 00 00 00 00 00 00 (20B)
+     ✅ Akzeptiert
+     📡 Antwort erhalten (1 Pakete)
+  📦 offset= 10 (0x000A) | 00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00 06 00 FF F7
+     Write 0x1018: 0A 00 14 00
+     ✅ Akzeptiert
+  📡 [CS-DATA] 00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00 06 00 FF F7 (20B)
+     📡 Antwort erhalten (1 Pakete)
+  📦 offset= 20 (0x0014) | E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00 09 00 0A 00
+     Write 0x1018: 14 00 14 00
+     ✅ Akzeptiert
+  📡 [CS-DATA] E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00 09 00 0A 00 (20B)
+     📡 Antwort erhalten (1 Pakete)
+  📦 offset= 30 (0x001E) | 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+     Write 0x1018: 1E 00 14 00
+     ✅ Akzeptiert
+  📡 [CS-DATA] 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 (20B)
+     📡 Antwort erhalten (1 Pakete)
+  📦 offset= 40 (0x0028) | 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80 44 47 6D 09
+     Write 0x1018: 28 00 14 00
+     ✅ Akzeptiert
+  📡 [CS-DATA] 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80 44 47 6D 09 (20B)
+     📡 Antwort erhalten (1 Pakete)
+  📦 offset= 50 (0x0032) | 35 0A 34 08 00 41 40 00 00 10 01 00 40 1F 10 27 00 00 38 FF
+     Write 0x1018: 32 00 14 00
+     ✅ Akzeptiert
+  📡 [CS-DATA] 35 0A 34 08 00 41 40 00 00 10 01 00 D0 07 10 27 00 00 38 FF (20B)
+     📡 Antwort erhalten (1 Pakete)
+  📦 offset= 60 (0x003C) | E2 04 06 FF FD 0A 05 00 00 00 00 00 00 00 00 00 00 00 00 00
+     Write 0x1018: 3C 00 14 00
+     ✅ Akzeptiert
+  📡 [CS-DATA] E2 04 06 FF FD 0A 05 00 00 00 00 00 00 00 00 00 00 00 00 00 (20B)
+     📡 Antwort erhalten (1 Pakete)
+
+  ══════════════════════════════════════════════════
+  ✅ 7 Blöcke gesendet, 0 Fehler
+
+  📤 Apply-Signal über 0x5404 senden...
+     ✅ Status query: 07
+     ✅ Apply/Save?: 05
+
+  ⏱️  5s beobachten...
+
+  🔌 Verbindung getrennt
+[bluetoothctl]> remove 76:8F
+  ✅ Fertig!

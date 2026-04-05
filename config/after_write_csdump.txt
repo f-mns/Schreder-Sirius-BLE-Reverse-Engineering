@@ -1,0 +1,111 @@
+root@pi-unvr:/home/pi# python3 schreder_deep_test.py csdump
+
+  Schréder BLE Deep-Test v1
+  MAC: XX:XX:XX:XX:XX:XX
+  Test: csdump
+
+======================================================================
+  📦 TEST: CS BLOCK DUMP — Configuration Store auslesen
+======================================================================
+  0x1018 = Read CS Block (offset + length)
+  0x1014 = Data Transfer (empfängt CS-Daten per Notify)
+  Lese die Firmware-Konfiguration in 20-Byte Blöcken
+
+     🗑️  remove XX:XX:XX:XX:XX:XX
+     🔍 scan + pair...
+     ✅ Pairing fertig
+     🔌 Verbunden
+     ✅ Notify auf 0x1014 (Data Transfer) aktiv
+     ✅ Notify auf 0x5404 (Serial) aktiv
+     📋 OTA Version (0x1011): 06
+     📋 Current App (0x1013): 01
+     📋 Data Transfer (0x1014): E2 04 06 FF FD 0A 05 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+     ──────────────────────────────────────────────────
+     📦 CS Block Dump starten...
+     ──────────────────────────────────────────────────
+
+     📤 CS Read: offset=0 (0x0000), length=20B
+        Write 0x1018: 00 00 14 00
+        ✅ Write akzeptiert
+     📡 [CS-DATA][01:30:36.342] 54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00 00 00 00 00 (20B)
+        📡 CS Daten: 54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00 00 00 00 00
+        0000: 54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00  |T.(68M.k .......|
+        0010: 00 00 00 00                                      |....|
+
+     📤 CS Read: offset=10 (0x000A), length=20B
+        Write 0x1018: 0A 00 14 00
+        ✅ Write akzeptiert
+     📡 [CS-DATA][01:30:37.463] 00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00 06 00 FF F7 (20B)
+        📡 CS Daten: 00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00 06 00 FF F7
+        0014: 00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00  |............(...|
+        0024: 06 00 FF F7                                      |....|
+
+     📤 CS Read: offset=20 (0x0014), length=20B
+        Write 0x1018: 14 00 14 00
+        ✅ Write akzeptiert
+     📡 [CS-DATA][01:30:38.535] E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00 09 00 0A 00 (20B)
+        📡 CS Daten: E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00 09 00 0A 00
+        0028: E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00  |.?...?0u.:......|
+        0038: 09 00 0A 00                                      |....|
+
+     📤 CS Read: offset=30 (0x001E), length=20B
+        Write 0x1018: 1E 00 14 00
+        ✅ Write akzeptiert
+     📡 [CS-DATA][01:30:39.754] 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 (20B)
+        📡 CS Daten: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        003C: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+        004C: 00 00 00 00                                      |....|
+
+     📤 CS Read: offset=40 (0x0028), length=20B
+        Write 0x1018: 28 00 14 00
+        ✅ Write akzeptiert
+     📡 [CS-DATA][01:30:40.875] 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80 44 47 6D 09 (20B)
+        📡 CS Daten: 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80 44 47 6D 09
+        0050: 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80  |................|
+        0060: 44 47 6D 09                                      |DGm.|
+
+     📤 CS Read: offset=50 (0x0032), length=20B
+        Write 0x1018: 32 00 14 00
+        ✅ Write akzeptiert
+     📡 [CS-DATA][01:30:41.948] 35 0A 34 08 00 41 40 00 00 10 01 00 D0 07 10 27 00 00 38 FF (20B)
+        📡 CS Daten: 35 0A 34 08 00 41 40 00 00 10 01 00 D0 07 10 27 00 00 38 FF
+        0064: 35 0A 34 08 00 41 40 00 00 10 01 00 D0 07 10 27  |5.4..A@........'|
+        0074: 00 00 38 FF                                      |..8.|
+
+     📤 CS Read: offset=60 (0x003C), length=20B
+        Write 0x1018: 3C 00 14 00
+        ❌ Write abgelehnt: (<BleakGATTProtocolErrorCode.UNLIKELY_ERROR: 14>, 'GATT Protocol Error: Unlikely Error')
+        ❌ Auch no-resp: Service Discovery has not been performed yet
+
+     ══════════════════════════════════════════════════
+     📦 CS Dump Zusammenfassung:
+        Blöcke gelesen: 6
+        Bytes gesamt:   120
+     ══════════════════════════════════════════════════
+
+     📋 Vollständiger CS Dump:
+        0000: 54 00 XX XX XX XX XX XX 20 00 00 00 00 00 00 00  |T.(68M.k .......|
+        0010: 00 00 00 00                                      |....|
+        0014: 00 00 00 00 00 00 00 00 00 00 00 00 28 00 00 00  |............(...|
+        0024: 06 00 FF F7                                      |....|
+        0028: E5 3F FF FF FF 3F 30 75 98 3A 00 00 9D 00 0F 00  |.?...?0u.:......|
+        0038: 09 00 0A 00                                      |....|
+        003C: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+        004C: 00 00 00 00                                      |....|
+        0050: 00 00 00 00 00 00 00 00 00 00 00 00 0A 00 0F 80  |................|
+        0060: 44 47 6D 09                                      |DGm.|
+        0064: 35 0A 34 08 00 41 40 00 00 10 01 00 D0 07 10 27  |5.4..A@........'|
+        0074: 00 00 38 FF                                      |..8.|
+
+     ✅ CS Dump Test abgeschlossen
+
+======================================================================
+  📊 ZUSAMMENFASSUNG
+======================================================================
+  📦 CS Dump: 6 Blöcke gelesen, 1 fehlgeschlagen
+     OTA Version: 06
+
+  💾 Log: schreder_deep_csdump_20260405_013043.json
+
+  ✅ Fertig!
